@@ -1,0 +1,62 @@
+:root {
+  --pink: #f14e95;
+  --bg: white;
+  --shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+.kotak {
+  width: 400px;
+  height: 275px;
+  background-color: white;
+  border: 3px solid black;
+  border-radius: 15px;
+  z-index: -1;
+  margin: auto;
+  justify-content: center;
+  text-align: center;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+}
+.kotak h1 {
+  margin-top: 50px;
+  justify-content: center;
+  align-items: center;
+  text-shadow: var(--shadow);
+}
+.kotak a {
+  box-shadow: var(--shadow);
+}
+body {
+  font-size: 1.2rem;
+  font-family: "DynaPuff", serif;
+}
+.hero {
+  min-height: 100vh;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("img/valentine_bg_05.jpg");
+  background-size: cover;
+  background-position: center;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  z-index: -1;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  color: var(--pink);
+  text-align: center;
+}
+.hero a {
+  color: white;
+  background-color: var(--pink);
+}
+.hero a:hover {
+  background-color: white;
+  color: var(--pink);
+}

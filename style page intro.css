@@ -1,0 +1,49 @@
+:root {
+  --pink: #f14e95;
+  --bg: white;
+  --shadow: 0 2px 2px rgb(0, 0, 0, /0.5);
+}
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(-3px);
+  }
+  50% {
+    transform: translateY(3px);
+  }
+  75% {
+    transform: translateY(-3px);
+  }
+}
+
+.centerImage {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: auto;
+}
+body {
+  background-image: url("img/valentine_bg_05.jpg");
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+}
+
+body {
+  font-size: 1.2rem;
+  font-family: "DynaPuff", serif;
+}
+.mail a {
+  animation: shake 2s infinite ease-in-out;
+}
+.mail a {
+  color: white;
+  background-color: var(--pink);
+}
+.mail a:hover {
+  background-color: white;
+  color: var(--pink);
+}

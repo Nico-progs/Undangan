@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PLISSS</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="snow.css" />
+    <link rel="stylesheet" href="style page seriusp.css" />
+  </head>
+  <body>
+    <section
+      id="page-2"
+      class="page-2 w-100 h-100 p-3 mx-auto text-center d-flex justify-content-center align-items-center"
+    >
+      <main>
+        <div class="kotak">
+          <h1>Penting banget, banget, BANGETTT</h1>
+          <img src="img/cute.png" width="25%" />
+          <br />
+          <a href="PAGE 3.html" class="btn btn-lg mt-8 align-items-center"
+            >Yaudah apa</a
+          >
+          <br />
+          <a
+            href="harus jawab ya.html"
+            class="btn btn-lg mt-1 fonts-size 1.2rem"
+            >g penting</a
+          ><iframe
+            src="audio.html"
+            width="0"
+            height="0"
+            style="border: none"
+          ></iframe>
+          <script src="snow.js"></script>
+          <audio id="audioPlayer" autoplay loop>
+            <source
+              src="img/Mata Ke Hati - HIVI! (Fingerstyle Guitar).mp3"
+              type="audio/mp3"
+            />
+          </audio>
+          <script>
+            document.addEventListener("DOMContentLoaded", function () {
+              let audio = document.getElementById("audioPlayer");
+
+              // Cek apakah ada posisi terakhir di localStorage
+              if (localStorage.getItem("audioTime")) {
+                audio.currentTime = localStorage.getItem("audioTime");
+              }
+
+              // Saat halaman akan ditutup atau navigasi terjadi, simpan posisi audio
+              window.addEventListener("beforeunload", function () {
+                localStorage.setItem("audioTime", audio.currentTime);
+              });
+            });
+          </script>
+        </div>
+      </main>
+    </section>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
