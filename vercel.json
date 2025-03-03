@@ -1,7 +1,7 @@
 {
-  "routes": [
-    { "src": "/api/(.*)", "dest": "/backend/index.js" },
-    { "src": "/(.*)", "dest": "/frontend/INTRO.html" }
+  "rewrites": [
+    { "source": "/api/(.*)", "destination": "/backend/index.js" },
+    { "source": "/(.*)", "destination": "/frontend/INTRO.html" }
   ],
   "cleanUrls": true
 }
