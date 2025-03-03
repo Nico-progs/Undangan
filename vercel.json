@@ -1,7 +1,4 @@
 {
-  "rewrites": [
-    { "source": "/api/(.*)", "destination": "/backend/index.js" },
-    { "source": "/(.*)", "destination": "/frontend/INTRO.html" }
-  ],
+  "rewrites": [{ "source": "/api/(.*)", "destination": "/backend/index.js" }],
   "cleanUrls": true
 }
