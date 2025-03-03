@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mind Room</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="snow.css" />
+    <link rel="stylesheet" href="mikir.css" />
+  </head>
+  <body>
+    <section
+      id="page-2"
+      class="page-2 w-100 h-100 p-3 mx-auto text-center d-flex justify-content-center align-items-center"
+    >
+      <main>
+        <audio src="img/Mata Ke Hati - HIVI! (Fingerstyle Guitar).mp3"></audio>
+        <div class="kotak">
+          <h1>Tempat mikir</h1>
+
+          <p>
+            Pengennya si bilang ga maksa, tapi jujur maksa dikit hehe <br />
+            *ini penting banget sumpah, iya tau emang gabisa sesebentar itu
+            mikirnya..(atau emang bisa?) <br />
+            tapi ya.. begitulah.. <br />
+            apapun jawabannya, makasih ya udah mau ngeladenin aku yang ya...
+            segininya lah <br />
+            not enough word to describe how unworthy i am.. but thank you
+          </p>
+          <script src="snow.js"></script>
+          <form>
+            <input id="jawaban" type="text" placeholder="Isi disini" />
+            <br />
+            <a
+              type="submit"
+              id="Her answer"
+              class="btn btn-med"
+              href="makasih ya.html"
+              >Kirim</a
+            >
+            <br />
+            <a class="ap btn btn-lg text-center" href="main question.html"
+              >*balik</a
+            >
+            <p id="result"></p>
+            <img src="img/download (1)2.png" class="img-a" />
+            <img src="img/pentol sticker by ⌗ ˏ` vera.png" class="img-s" />
+            <img src="img/download (1).png" class="img-b" />
+          </form>
+          <script>
+            document
+              .getElementById("Her answer")
+              .addEventListener("click", async function (event) {
+                //mengambil data dari input form
+                const dataform = {
+                  jawaban: document.getElementById("jawaban").value,
+                };
+
+                console.log("Data yang dikirim:", dataform); //debug katanya
+
+                try {
+                  // Kirim data ke backend dengan Fetch API
+                  const response = await fetch("http://localhost:3000/submit", {
+                    method: "POST",
+                    headers: {
+                      "Content-Type": "application/json", // Pastikan tipe JSON
+                    },
+                    body: JSON.stringify(dataform), // Konversi objek ke JSON
+                  });
+
+                  const result = await response.json();
+                  console.log("✅ Respons dari server:", result); // Debugging respons backend
+                  document.getElementById("response").innerText =
+                    result.message; // Tampilkan respons
+
+                  window.location.href = event.location.href;
+                } catch (error) {
+                  console.error("❌ Error mengirim data:", error);
+                }
+              });
+          </script>
+          <audio id="audioPlayer" autoplay loop>
+            <source
+              src="img/Mata Ke Hati - HIVI! (Fingerstyle Guitar).mp3"
+              type="audio/mp3"
+            />
+          </audio>
+          <script>
+            document.addEventListener("DOMContentLoaded", function () {
+              let audio = document.getElementById("audioPlayer");
+
+              // Cek apakah ada posisi terakhir di localStorage
+              if (localStorage.getItem("audioTime")) {
+                audio.currentTime = localStorage.getItem("audioTime");
+              }
+
+              // Saat halaman akan ditutup atau navigasi terjadi, simpan posisi audio
+              window.addEventListener("beforeunload", function () {
+                localStorage.setItem("audioTime", audio.currentTime);
+              });
+            });
+          </script>
+        </div>
+      </main>
+    </section>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
