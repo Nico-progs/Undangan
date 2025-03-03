@@ -18,6 +18,9 @@ app.post("/submit", (req, res) => {
     message: `Jawaban yang diterima: ${jawaban}`, // Gunakan backtick untuk template string
   });
 });
+app.get("/", (req, res) => {
+  res.send("✅ Server backend berjalan dengan sukses!");
+});
 
 // Jalankan server (panggil app.listen hanya SEKALI)
 app.listen(PORT, () => {
